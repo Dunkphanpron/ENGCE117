@@ -1,14 +1,15 @@
 #include <stdio.h>
 
-int GetMatrix( int *row, int *col ) ;
+int *GetMatrix( int *row, int *col ) ;
 
 int main() {
     int *data, m, n ;
-    data = GetMatrix( &m, &n ) ;
+    data = GetMatrix( &m, &n );
+    delete[] data;
     return 0 ;
 }
 
-int GetMatrix( int *row, int *col ) {
+int *GetMatrix( int *row, int *col ) {
 
     int *a;
 
@@ -18,6 +19,7 @@ int GetMatrix( int *row, int *col ) {
     printf("Col : ");
     scanf("%d" , col);
 
+    a = new int [*row * *col];
 
     for (int i = 0; i < *row; i++)
     {
@@ -25,7 +27,7 @@ int GetMatrix( int *row, int *col ) {
         {
             printf("Number Columns : ( %d | %d ) \n" , i + 1 , j + 1 );
              printf("Add Data : ");
-             scanf("%d", &a);
+             scanf("%d", &a[i * (*col) +j]);
         }      
     }
     printf("row : %d " ,*row);
@@ -34,7 +36,7 @@ int GetMatrix( int *row, int *col ) {
     for (int i = 0; i < *row; i++){
         for (int j = 0; j < *col; j++)
         {
-            printf("| %d | " , a);
+            printf("| %d | " , a[i * (*col) +j]);
         }
         printf("\n");
     }
