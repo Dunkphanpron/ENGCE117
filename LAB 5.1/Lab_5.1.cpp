@@ -28,7 +28,6 @@ int main() {
 }
 void showAll(struct studentNode *walk) {
     while (walk != NULL) {
-        //printf("%p ", walk->name);
         printf( "%s " , walk->name );
         walk = walk->next;
     }
