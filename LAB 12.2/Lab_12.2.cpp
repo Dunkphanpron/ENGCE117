@@ -3,7 +3,7 @@
 struct Item {
     int weight;
     int value;
-    double ratio; // Ratio of value to weight
+    double ratio;
 };
 
 bool compare(Item item1, Item item2) {
